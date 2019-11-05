@@ -1,0 +1,51 @@
+https://www.kaggle.com/dongeorge/beer-consumption-sao-paulo
+---------------------------------
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+import pandas as pd
+import numpy as np
+
+------------------------------
+blibliotecas opcionais ????
+
+----------------------------
+leitura de dados
+dados = pd.read_csv('../Dados/Consumo_cerveja.csv', sep=';')
+
+---------------------------------
+visualizar os dados
+
+dados
+
+--------------------------------
+Verificaremos o tamanho do nosso dataset ao escrever:
+
+dados.shape
+-----------------------------------
+Criaremos inicialmente uma tabela de estatísticas descritivas dos dados do dataset. Escreveremos:
+
+dados.describe().round(2)
+
+----------------------------------------
+Para realizar essa medição, usaremos a matriz. Para tanto escreveremos:
+
+matriz de correlação
+
+dados.corr().round(4)
+
+----------------------------------------
+analises graficas
+
+fig, ax = plt.subplots(figsize=(20, 6)) 
+
+--------------------------------------------------
+Também inseriremos nomes dos eixos do gráfico, e ajustaremos o tamanho da fonte para 16.
+
+fig, ax = plt.subplots(figsize=(20,6))
+
+ax.set_title('Consumo de Cerveja', fontsize=20)
+ax.set_ylabel('Litros', fontsize=16)
+ax.set_xlabel('Dias', fontsize=16)
+ax = dados['consumo'].plot(fontsize=14)
+
